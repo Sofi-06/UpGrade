@@ -13,8 +13,4 @@ app.use(express.json());
 
 app.use('/auth', authRoutes);
 
-
-app.use('/users', userRoutes);
-
-
 module.exports = app;

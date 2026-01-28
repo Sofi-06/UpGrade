@@ -32,6 +32,33 @@ const registerUser = async (data) => {
   return user;
 };
 
+const createAuthUser = async ({ email, password, nombre, apellido, rol }) => {
+  // ¿Existe el usuario?
+  const existingUser = await prisma.usuario.findUnique({
+    where: { email }
+  });
+
+  if (existingUser) {
+    throw new Error('El correo ya está registrado');
+  }
+
+  // Encriptar contraseña
+  const hashedPassword = await bcrypt.hash(password, 10);
+
+  // Crear usuario con todos los datos
+  const user = await prisma.usuario.create({
+    data: {
+      email,
+      password: hashedPassword,
+      nombre,
+      apellido,
+      rol
+    }
+  });
+
+  return user;
+};
+
 const loginUser = async ({ email, password }) => {
   const user = await prisma.usuario.findUnique({
     where: { email }
@@ -69,6 +96,7 @@ const loginUser = async ({ email, password }) => {
 
 module.exports = {
   registerUser,
+  createAuthUser,
   loginUser
 };
 

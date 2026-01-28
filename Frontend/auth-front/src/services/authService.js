@@ -7,11 +7,13 @@ export async function login(email, password) {
     body: JSON.stringify({ email, password }),
   });
 
+  const data = await response.json();
+
   if (!response.ok) {
-    throw new Error("Login failed");
+    throw new Error(data.message || "Login failed");
   }
 
-  return response.json();
+  return data;
 }
 
 export async function register(userData) {
@@ -23,9 +25,11 @@ export async function register(userData) {
     body: JSON.stringify(userData),
   });
 
+  const data = await response.json();
+
   if (!response.ok) {
-    throw new Error("Register failed");
+    throw new Error(data.error || data.message || "Register failed");
   }
 
-  return response.json();
+  return data;
 }
