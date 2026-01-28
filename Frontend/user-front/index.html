@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>User Service</title>
+</head>
+
+<body>
+
+    <h2 id="welcome"></h2>
+
+    <nav>
+        <a href="usuarios.html" id="usuariosLink">Usuarios</a>
+        <button onclick="logout()">Cerrar sesión</button>
+    </nav>
+
+    <script src="js/auth.js"></script>
+</body>
+
+<script>
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const cookies = document.cookie.split(';');
+        for (let cookie of cookies) {
+            cookie = cookie.trim();
+            if (cookie.indexOf(nameEQ) === 0) {
+                return cookie.substring(nameEQ.length, cookie.length);
+            }
+        }
+        return null;
+    }
+
+    const token = getCookie("token");
+    const rol = getCookie("rol");
+
+    if (!token) {
+        // Si no hay token → fuera
+        window.location.href = "http://localhost:5173";
+    }
+
+    document.getElementById("welcome").innerText =
+        "Bienvenido, rol: " + rol;
+
+    // Control de roles
+    if (rol !== "SUPER_ADMIN" && rol !== "DIRECTIVO") {
+        document.getElementById("usuariosLink").style.display = "none";
+    }
+
+    function logout() {
+        document.cookie = "token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+        document.cookie = "rol=; path=/; expires=Thu, 01 Jan 1970 00:00:00 UTC;";
+        window.location.href = "http://localhost:5173";
+    }
+</script>
+
+</html>

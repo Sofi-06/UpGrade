@@ -10,8 +10,16 @@ function Login({ onSwitchToRegister }) {
 
     try {
       const data = await login(email, password);
-      localStorage.setItem("token", data.token);
-      alert("Login exitoso");
+
+      // 1. Guardar token en cookie
+      document.cookie = `token=${data.token}; path=/`;
+
+      // 2. Guardar rol en cookie
+      document.cookie = `rol=${data.user.rol}; path=/`;
+
+      // 3. Redirigir al front de usuarios
+      window.location.href = "http://localhost:5500/Frontend/user-front/index.html";
+
     } catch (error) {
       alert(error.message || "Credenciales inválidas");
     }

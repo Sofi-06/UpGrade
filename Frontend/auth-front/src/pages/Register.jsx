@@ -25,8 +25,13 @@ function Register({ onSwitchToLogin }) {
         password,
         rol,
       });
-      localStorage.setItem("token", data.token);
+      // Guardar token en cookie
+      document.cookie = `token=${data.token}; path=/`;
+      document.cookie = `rol=${rol}; path=/`;
+      
       alert("Registro exitoso");
+      // Redirigir al dashboard
+      window.location.href = "http://localhost:5500/Frontend/user-front/index.html";
     } catch (error) {
       alert(error.message || "Error en el registro");
     }
