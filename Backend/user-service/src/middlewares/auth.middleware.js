@@ -1,13 +1,24 @@
 import jwt from "jsonwebtoken";
 
 export const authMiddleware = (req, res, next) => {
-  const authHeader = req.headers.authorization;
+  // Intentar leer del header Authorization primero
+  let token = req.headers.authorization?.split(" ")[1];
 
-  if (!authHeader) {
-    return res.status(401).json({ error: "Token no enviado" });
+  // Si no está, intentar leer de las cookies
+  if (!token && req.headers.cookie) {
+    const cookies = req.headers.cookie.split(";");
+    for (let cookie of cookies) {
+      const [name, value] = cookie.trim().split("=");
+      if (name === "token") {
+        token = value;
+        break;
+      }
+    }
   }
 
-  const token = authHeader.split(" ")[1];
+  if (!token) {
+    return res.status(401).json({ error: "Token no enviado" });
+  }
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
