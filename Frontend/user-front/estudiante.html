@@ -3,13 +3,95 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Panel Estudiante</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
 
-    <h1>Panel Estudiante</h1>
-    <p>Mis materias, calificaciones</p>
+    <div class="page">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Panel</p>
+                <h1>Estudiante</h1>
+                <p class="subtitle">Mis materias, calificaciones</p>
+            </div>
+            <div class="topbar-actions">
+                <button class="btn btn-ghost">Descargar</button>
+                <button class="btn btn-primary">Ver horario</button>
+            </div>
+        </header>
+
+        <section class="stats">
+            <article class="card">
+                <p class="card-label">Materias activas</p>
+                <p class="card-value">5</p>
+                <p class="card-meta">1 pendiente por entregar</p>
+            </article>
+            <article class="card">
+                <p class="card-label">Promedio</p>
+                <p class="card-value">4.1</p>
+                <p class="card-meta">Meta: 4.5</p>
+            </article>
+            <article class="card">
+                <p class="card-label">Asistencias</p>
+                <p class="card-value">96%</p>
+                <p class="card-meta">Última semana</p>
+            </article>
+        </section>
+
+        <section class="grid">
+            <article class="panel">
+                <div class="panel-header">
+                    <h2>Próximas entregas</h2>
+                    <a class="link" href="#">Ver calendario</a>
+                </div>
+                <ul class="list">
+                    <li>
+                        <div>
+                            <p class="list-title">Ensayo de historia</p>
+                            <p class="list-subtitle">Entrega: 08 Feb, 23:59</p>
+                        </div>
+                        <span class="badge">Urgente</span>
+                    </li>
+                    <li>
+                        <div>
+                            <p class="list-title">Laboratorio de física</p>
+                            <p class="list-subtitle">Entrega: 10 Feb, 18:00</p>
+                        </div>
+                        <span class="badge neutral">En 4 días</span>
+                    </li>
+                    <li>
+                        <div>
+                            <p class="list-title">Quiz matemáticas</p>
+                            <p class="list-subtitle">Entrega: 12 Feb, 09:00</p>
+                        </div>
+                        <span class="badge neutral">En 6 días</span>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="panel">
+                <div class="panel-header">
+                    <h2>Mis materias</h2>
+                </div>
+                <div class="chip-grid">
+                    <span class="chip">Matemáticas</span>
+                    <span class="chip">Lengua</span>
+                    <span class="chip">Física</span>
+                    <span class="chip">Historia</span>
+                    <span class="chip">Programación</span>
+                </div>
+            </article>
+        </section>
+    </div>
 
     <script src="js/guard.js"></script>
     <script>

@@ -3,13 +3,95 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Gestión de usuarios</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
 
-    <h1>Gestión de usuarios</h1>
-    <p>Solo roles administrativos</p>
+    <div class="page">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Administración</p>
+                <h1>Gestión de usuarios</h1>
+                <p class="subtitle">Solo roles administrativos</p>
+            </div>
+            <div class="topbar-actions">
+                <button class="btn btn-ghost">Exportar</button>
+                <button class="btn btn-primary">Nuevo usuario</button>
+            </div>
+        </header>
+
+        <section class="stats">
+            <article class="card">
+                <p class="card-label">Usuarios activos</p>
+                <p class="card-value">328</p>
+                <p class="card-meta">+5 esta semana</p>
+            </article>
+            <article class="card">
+                <p class="card-label">Pendientes</p>
+                <p class="card-value">12</p>
+                <p class="card-meta">Solicitudes de acceso</p>
+            </article>
+            <article class="card">
+                <p class="card-label">Roles críticos</p>
+                <p class="card-value">3</p>
+                <p class="card-meta">Supervisar permisos</p>
+            </article>
+        </section>
+
+        <section class="grid">
+            <article class="panel">
+                <div class="panel-header">
+                    <h2>Últimas actividades</h2>
+                    <a class="link" href="#">Ver auditoría</a>
+                </div>
+                <ul class="list">
+                    <li>
+                        <div>
+                            <p class="list-title">Nuevo docente creado</p>
+                            <p class="list-subtitle">María López · Hace 2 h</p>
+                        </div>
+                        <span class="badge">Nuevo</span>
+                    </li>
+                    <li>
+                        <div>
+                            <p class="list-title">Rol actualizado</p>
+                            <p class="list-subtitle">Carlos Pérez · Hace 1 día</p>
+                        </div>
+                        <span class="badge neutral">Revisión</span>
+                    </li>
+                    <li>
+                        <div>
+                            <p class="list-title">Cuenta bloqueada</p>
+                            <p class="list-subtitle">Usuario invitado · Hace 2 días</p>
+                        </div>
+                        <span class="badge warning">Atención</span>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="panel">
+                <div class="panel-header">
+                    <h2>Filtros rápidos</h2>
+                </div>
+                <div class="chip-grid">
+                    <span class="chip">Directivos</span>
+                    <span class="chip">Docentes</span>
+                    <span class="chip">Estudiantes</span>
+                    <span class="chip">Pendientes</span>
+                    <span class="chip">Suspendidos</span>
+                </div>
+            </article>
+        </section>
+    </div>
 
     <script src="js/guard.js"></script>
     <script>

@@ -3,20 +3,78 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>User Service</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
 
-    <h2 id="welcome"></h2>
+    <div class="page">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Bienvenido</p>
+                <h1 id="welcome">Panel de usuario</h1>
+                <p class="subtitle">Selecciona una opción para continuar</p>
+            </div>
+            <div class="topbar-actions">
+                <button class="btn btn-ghost" onclick="logout()">Cerrar sesión</button>
+            </div>
+        </header>
 
-    <div id="menu">
-        <a href="usuarios.html" id="adminView">Gestión de usuarios</a>
-        <a href="docente.html" id="docenteView">Panel docente</a>
-        <a href="estudiante.html" id="estudianteView">Panel estudiante</a>
+        <section class="stats">
+            <article class="card">
+                <p class="card-label">Estado</p>
+                <p class="card-value">Activo</p>
+                <p class="card-meta">Sesión iniciada</p>
+            </article>
+            <article class="card">
+                <p class="card-label">Último acceso</p>
+                <p class="card-value">Hoy</p>
+                <p class="card-meta">6 Feb 2026</p>
+            </article>
+            <article class="card">
+                <p class="card-label">Permisos</p>
+                <p class="card-value" id="role-count">-</p>
+                <p class="card-meta">Roles asignados</p>
+            </article>
+        </section>
+
+        <section class="panel" style="margin: 0 auto; max-width: 720px;">
+            <div class="panel-header">
+                <h2>Accesos disponibles</h2>
+            </div>
+            <div id="menu" class="menu-grid">
+                <a href="usuarios.html" id="adminView" class="menu-card">
+                    <div class="menu-icon">👥</div>
+                    <div>
+                        <p class="menu-title">Gestión de usuarios</p>
+                        <p class="menu-subtitle">Administrar cuentas y permisos</p>
+                    </div>
+                </a>
+                <a href="docente.html" id="docenteView" class="menu-card">
+                    <div class="menu-icon">📚</div>
+                    <div>
+                        <p class="menu-title">Panel docente</p>
+                        <p class="menu-subtitle">Clases, notas y evaluaciones</p>
+                    </div>
+                </a>
+                <a href="estudiante.html" id="estudianteView" class="menu-card">
+                    <div class="menu-icon">🎓</div>
+                    <div>
+                        <p class="menu-title">Panel estudiante</p>
+                        <p class="menu-subtitle">Materias y calificaciones</p>
+                    </div>
+                </a>
+            </div>
+        </section>
     </div>
-
-    <button onclick="logout()">Cerrar sesión</button>
 
     <script src="js/index.js"></script>
 </body>

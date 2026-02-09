@@ -3,13 +3,94 @@
 
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Panel Docente</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
 
-    <h1>Panel Docente</h1>
-    <p>Clases, notas, estudiantes</p>
+    <div class="page">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">Panel</p>
+                <h1>Docente</h1>
+                <p class="subtitle">Clases, notas, estudiantes</p>
+            </div>
+            <div class="topbar-actions">
+                <button class="btn btn-ghost">Exportar</button>
+                <button class="btn btn-primary">Nueva clase</button>
+            </div>
+        </header>
+
+        <section class="stats">
+            <article class="card">
+                <p class="card-label">Clases activas</p>
+                <p class="card-value">6</p>
+                <p class="card-meta">2 pendientes de evaluación</p>
+            </article>
+            <article class="card">
+                <p class="card-label">Estudiantes</p>
+                <p class="card-value">184</p>
+                <p class="card-meta">+12 esta semana</p>
+            </article>
+            <article class="card">
+                <p class="card-label">Promedio general</p>
+                <p class="card-value">4.3</p>
+                <p class="card-meta">Sobre 5.0</p>
+            </article>
+        </section>
+
+        <section class="grid">
+            <article class="panel">
+                <div class="panel-header">
+                    <h2>Próximas clases</h2>
+                    <a class="link" href="#">Ver todo</a>
+                </div>
+                <ul class="list">
+                    <li>
+                        <div>
+                            <p class="list-title">Matemáticas I</p>
+                            <p class="list-subtitle">Lun, 08:00 - Aula 204</p>
+                        </div>
+                        <span class="badge">Hoy</span>
+                    </li>
+                    <li>
+                        <div>
+                            <p class="list-title">Física II</p>
+                            <p class="list-subtitle">Mar, 10:00 - Laboratorio B</p>
+                        </div>
+                        <span class="badge">Mañana</span>
+                    </li>
+                    <li>
+                        <div>
+                            <p class="list-title">Cálculo</p>
+                            <p class="list-subtitle">Mié, 11:30 - Aula 101</p>
+                        </div>
+                        <span class="badge neutral">En 2 días</span>
+                    </li>
+                </ul>
+            </article>
+
+            <article class="panel">
+                <div class="panel-header">
+                    <h2>Acciones rápidas</h2>
+                </div>
+                <div class="quick-actions">
+                    <button class="btn btn-soft">Cargar notas</button>
+                    <button class="btn btn-soft">Enviar aviso</button>
+                    <button class="btn btn-soft">Registrar asistencia</button>
+                    <button class="btn btn-soft">Crear evaluación</button>
+                </div>
+            </article>
+        </section>
+    </div>
 
     <script src="js/guard.js"></script>
     <script>
