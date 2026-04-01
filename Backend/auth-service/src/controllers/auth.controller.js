@@ -51,6 +51,19 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   try {
     const result = await authService.loginUser(req.body);
+
+    try {
+      await axios.post("http://localhost:3002/users", {
+        id: result.user.id,
+        nombre: result.user.nombre,
+        apellido: result.user.apellido,
+        email: result.user.email,
+        rol: result.user.rol
+      });
+    } catch (axiosError) {
+      console.warn("USER-SERVICE no disponible en login", axiosError.message);
+    }
+
     res.json({ message: "Login exitoso", ...result });
   } catch (error) {
     res.status(401).json({ message: error.message });

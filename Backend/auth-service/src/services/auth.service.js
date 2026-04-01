@@ -88,6 +88,7 @@ const loginUser = async ({ email, password }) => {
     user: {
       id: user.id,
       nombre: user.nombre,
+      apellido: user.apellido,
       email: user.email,
       rol: user.rol
     }
