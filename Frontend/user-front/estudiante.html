@@ -4,100 +4,352 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Panel Estudiante</title>
+    <title>Dashboard estudiante</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
         rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
-
-    <div class="page">
-        <header class="topbar">
-            <div>
-                <p class="eyebrow">Panel</p>
-                <h1>Estudiante</h1>
-                <p class="subtitle">Mis materias, calificaciones</p>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-mark">SC</div>
+                <div class="brand-copy">
+                    <small>Campus suite</small>
+                    <strong>Student Flow</strong>
+                </div>
             </div>
-            <div class="topbar-actions">
-                <button class="btn btn-ghost">Descargar</button>
-                <button class="btn btn-primary">Ver horario</button>
+
+            <div class="side-panel">
+                <div class="side-label">Ruta de aprendizaje</div>
+                <div class="side-title">Progreso, agenda y foco</div>
+                <p class="side-text">Una experiencia pensada para que el estudiante vea lo importante del dia sin perderse en menus pesados.</p>
             </div>
-        </header>
 
-        <section class="stats">
-            <article class="card">
-                <p class="card-label">Materias activas</p>
-                <p class="card-value">5</p>
-                <p class="card-meta">1 pendiente por entregar</p>
-            </article>
-            <article class="card">
-                <p class="card-label">Promedio</p>
-                <p class="card-value">4.1</p>
-                <p class="card-meta">Meta: 4.5</p>
-            </article>
-            <article class="card">
-                <p class="card-label">Asistencias</p>
-                <p class="card-value">96%</p>
-                <p class="card-meta">Última semana</p>
-            </article>
-        </section>
+            <nav class="side-nav">
+                <a class="nav-link" href="index.html">
+                    <span class="nav-icon">DB</span>
+                    <span>Dashboard</span>
+                </a>
+                <a class="nav-link" href="usuarios.html">
+                    <span class="nav-icon">AD</span>
+                    <span>Admin</span>
+                </a>
+                <a class="nav-link" href="docente.html">
+                    <span class="nav-icon">DO</span>
+                    <span>Docente</span>
+                </a>
+                <a class="nav-link active" href="estudiante.html">
+                    <span class="nav-icon">ES</span>
+                    <span>Mi panel</span>
+                </a>
+            </nav>
 
-        <section class="grid">
-            <article class="panel">
-                <div class="panel-header">
-                    <h2>Próximas entregas</h2>
-                    <a class="link" href="#">Ver calendario</a>
-                </div>
-                <ul class="list">
-                    <li>
-                        <div>
-                            <p class="list-title">Ensayo de historia</p>
-                            <p class="list-subtitle">Entrega: 08 Feb, 23:59</p>
-                        </div>
-                        <span class="badge">Urgente</span>
-                    </li>
-                    <li>
-                        <div>
-                            <p class="list-title">Laboratorio de física</p>
-                            <p class="list-subtitle">Entrega: 10 Feb, 18:00</p>
-                        </div>
-                        <span class="badge neutral">En 4 días</span>
-                    </li>
-                    <li>
-                        <div>
-                            <p class="list-title">Quiz matemáticas</p>
-                            <p class="list-subtitle">Entrega: 12 Feb, 09:00</p>
-                        </div>
-                        <span class="badge neutral">En 6 días</span>
-                    </li>
-                </ul>
-            </article>
+            <div class="sidebar-footer">
+                <a class="logout-link" href="index.html">Volver al inicio</a>
+            </div>
+        </aside>
 
-            <article class="panel">
-                <div class="panel-header">
-                    <h2>Mis materias</h2>
+        <main class="workspace">
+            <div class="workspace-inner">
+                <div class="toolbar">
+                    <label class="toolbar-search">
+                        <span>Buscar</span>
+                        <input type="text" placeholder="Busca materia, recurso o entrega" />
+                    </label>
+
+                    <div class="toolbar-meta">
+                        <div class="toolbar-pill">Estudiante</div>
+                        <a class="toolbar-icon" href="#">HW</a>
+                        <div class="toolbar-profile">
+                            <div class="avatar alt">ES</div>
+                            <div class="profile-copy">
+                                <strong>Mi progreso</strong>
+                                <span>Materias, agenda y entregas</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="chip-grid">
-                    <span class="chip">Matemáticas</span>
-                    <span class="chip">Lengua</span>
-                    <span class="chip">Física</span>
-                    <span class="chip">Historia</span>
-                    <span class="chip">Programación</span>
+
+                <div class="content-grid">
+                    <section class="content-main">
+                        <article class="hero-card">
+                            <div class="hero-copy">
+                                <div class="eyebrow">Dashboard estudiante</div>
+                                <h2>Tu semana ya esta ordenada: tareas, clases y foco academico.</h2>
+                                <p class="subtitle">El tablero del estudiante toma el mismo estilo del mock y lo transforma en una experiencia clara para seguimiento diario y avance personal.</p>
+                                <div class="hero-actions">
+                                    <button class="btn btn-primary" type="button">Ver horario</button>
+                                    <button class="btn btn-ghost" type="button">Descargar reporte</button>
+                                </div>
+                            </div>
+
+                            <div class="hero-art" aria-hidden="true">
+                                <div class="figure-screen"></div>
+                                <div class="figure-person">
+                                    <div class="head"></div>
+                                    <div class="body"></div>
+                                    <div class="arms"></div>
+                                    <div class="legs"></div>
+                                </div>
+                                <div class="figure-desk"></div>
+                                <div class="figure-seat"></div>
+                            </div>
+                        </article>
+
+                        <section class="summary-row">
+                            <article class="stat-card">
+                                <p class="card-label">Materias activas</p>
+                                <p class="card-value">05</p>
+                                <p class="card-meta">1 requiere atencion extra</p>
+                            </article>
+                            <article class="stat-card">
+                                <p class="card-label">Promedio</p>
+                                <p class="card-value">4.1</p>
+                                <p class="card-meta">Meta personal 4.5</p>
+                            </article>
+                            <article class="stat-card">
+                                <p class="card-label">Asistencia</p>
+                                <p class="card-value">96%</p>
+                                <p class="card-meta">Constancia muy alta</p>
+                            </article>
+                        </section>
+
+                        <div class="dashboard-grid">
+                            <article class="panel">
+                                <div class="panel-header">
+                                    <div>
+                                        <h2>Mi rendimiento</h2>
+                                        <p>Comparativo por materia.</p>
+                                    </div>
+                                    <span class="pill">Semana actual</span>
+                                </div>
+
+                                <div class="bars">
+                                    <div class="bar">
+                                        <div class="bar-meter" style="--height: 72%;"></div>
+                                        <span>Matematicas</span>
+                                    </div>
+                                    <div class="bar">
+                                        <div class="bar-meter" style="--height: 84%;"></div>
+                                        <span>Fisica</span>
+                                    </div>
+                                    <div class="bar">
+                                        <div class="bar-meter" style="--height: 78%;"></div>
+                                        <span>Historia</span>
+                                    </div>
+                                    <div class="bar">
+                                        <div class="bar-meter" style="--height: 88%;"></div>
+                                        <span>Lengua</span>
+                                    </div>
+                                    <div class="bar">
+                                        <div class="bar-meter" style="--height: 91%;"></div>
+                                        <span>Programacion</span>
+                                    </div>
+                                    <div class="bar">
+                                        <div class="bar-meter" style="--height: 66%;"></div>
+                                        <span>Proyecto</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="panel">
+                                <div class="panel-header">
+                                    <div>
+                                        <h2>Radar de avance</h2>
+                                        <p>Donde vas mejor y donde reforzar.</p>
+                                    </div>
+                                </div>
+
+                                <div class="progress-grid">
+                                    <div class="progress-card">
+                                        <div class="ring" style="--value: 89;" data-label="89%"></div>
+                                        <div class="progress-copy">
+                                            <strong>Programacion</strong>
+                                            <span>Tu mejor frente</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress-card">
+                                        <div class="ring" style="--value: 81;" data-label="81%"></div>
+                                        <div class="progress-copy">
+                                            <strong>Lectura critica</strong>
+                                            <span>Buen ritmo</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress-card">
+                                        <div class="ring" style="--value: 74;" data-label="74%"></div>
+                                        <div class="progress-copy">
+                                            <strong>Fisica</strong>
+                                            <span>Necesita practica</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress-card">
+                                        <div class="ring" style="--value: 93;" data-label="93%"></div>
+                                        <div class="progress-copy">
+                                            <strong>Asistencia</strong>
+                                            <span>Excelente constancia</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="split-grid">
+                            <article class="panel">
+                                <div class="panel-header">
+                                    <div>
+                                        <h2>Entregas proximas</h2>
+                                        <p>Tus pendientes mas cercanos.</p>
+                                    </div>
+                                    <a class="link" href="#">Ver calendario</a>
+                                </div>
+
+                                <ul class="task-list">
+                                    <li class="task-item">
+                                        <div class="icon-badge">HS</div>
+                                        <div>
+                                            <strong>Ensayo de historia</strong>
+                                            <span>Entrega 08 Abr a las 23:59. Falta subir bibliografia.</span>
+                                        </div>
+                                        <span class="tag">Urgente</span>
+                                    </li>
+                                    <li class="task-item">
+                                        <div class="icon-badge">LF</div>
+                                        <div>
+                                            <strong>Laboratorio de fisica</strong>
+                                            <span>Entrega 10 Abr a las 18:00. Falta conclusiones.</span>
+                                        </div>
+                                        <span class="tag">4 dias</span>
+                                    </li>
+                                    <li class="task-item">
+                                        <div class="icon-badge">QM</div>
+                                        <div>
+                                            <strong>Quiz de matematicas</strong>
+                                            <span>Entrega 12 Abr a las 09:00. Requiere repaso de funciones.</span>
+                                        </div>
+                                        <span class="tag">6 dias</span>
+                                    </li>
+                                </ul>
+                            </article>
+
+                            <article class="panel">
+                                <div class="panel-header">
+                                    <div>
+                                        <h2>Mis materias</h2>
+                                        <p>Mapa rapido del semestre.</p>
+                                    </div>
+                                </div>
+
+                                <div class="action-grid">
+                                    <div class="action-card">
+                                        <strong>Matematicas</strong>
+                                        <span>4.0 acumulado y ejercicios por revisar.</span>
+                                    </div>
+                                    <div class="action-card">
+                                        <strong>Fisica</strong>
+                                        <span>3.8 acumulado y un laboratorio pendiente.</span>
+                                    </div>
+                                    <div class="action-card">
+                                        <strong>Historia</strong>
+                                        <span>4.4 acumulado y ensayo en progreso.</span>
+                                    </div>
+                                    <div class="action-card">
+                                        <strong>Programacion</strong>
+                                        <span>4.8 acumulado y proyecto final en curso.</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <aside class="content-side">
+                        <article class="panel">
+                            <div class="panel-header">
+                                <div>
+                                    <h2>Agenda del dia</h2>
+                                    <p>Ruta academica de hoy.</p>
+                                </div>
+                                <span class="pill">Hoy</span>
+                            </div>
+
+                            <div class="schedule-list">
+                                <div class="schedule-item">
+                                    <div class="schedule-time">08:00</div>
+                                    <div class="schedule-card active">
+                                        <strong>Programacion web</strong>
+                                        <span>Salon virtual 2</span>
+                                        <small>08:00 - 09:30</small>
+                                    </div>
+                                </div>
+                                <div class="schedule-item">
+                                    <div class="schedule-time">11:00</div>
+                                    <div class="schedule-card">
+                                        <strong>Fisica II</strong>
+                                        <span>Laboratorio B</span>
+                                        <small>11:00 - 12:15</small>
+                                    </div>
+                                </div>
+                                <div class="schedule-item">
+                                    <div class="schedule-time">14:00</div>
+                                    <div class="schedule-card">
+                                        <strong>Historia contemporanea</strong>
+                                        <span>Aula 102</span>
+                                        <small>14:00 - 15:00</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="panel">
+                            <div class="panel-header">
+                                <div>
+                                    <h2>Recursos sugeridos</h2>
+                                    <p>Materiales para avanzar hoy.</p>
+                                </div>
+                            </div>
+
+                            <ul class="resource-list">
+                                <li class="resource-item">
+                                    <div class="avatar">JS</div>
+                                    <div>
+                                        <strong>Guia de estructuras</strong>
+                                        <span>Repaso de listas y pilas para quiz.</span>
+                                    </div>
+                                    <span class="tag">PDF</span>
+                                </li>
+                                <li class="resource-item">
+                                    <div class="avatar alt">LB</div>
+                                    <div>
+                                        <strong>Plantilla de laboratorio</strong>
+                                        <span>Formato listo para conclusiones de fisica.</span>
+                                    </div>
+                                    <span class="tag">Doc</span>
+                                </li>
+                                <li class="resource-item">
+                                    <div class="avatar dark">VD</div>
+                                    <div>
+                                        <strong>Video de integrales</strong>
+                                        <span>Sesion corta de 18 minutos para repaso.</span>
+                                    </div>
+                                    <span class="tag">Video</span>
+                                </li>
+                            </ul>
+                        </article>
+                    </aside>
                 </div>
-            </article>
-        </section>
+            </div>
+        </main>
     </div>
 
     <script src="js/guard.js"></script>
     <script>
         requireRole(["ESTUDIANTE"]);
     </script>
-
 </body>
 
 </html>

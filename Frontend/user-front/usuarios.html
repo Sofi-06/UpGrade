@@ -4,100 +4,352 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Gestión de usuarios</title>
+    <title>Dashboard administrativo</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
         rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
-
-    <div class="page">
-        <header class="topbar">
-            <div>
-                <p class="eyebrow">Administración</p>
-                <h1>Gestión de usuarios</h1>
-                <p class="subtitle">Solo roles administrativos</p>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-mark">SC</div>
+                <div class="brand-copy">
+                    <small>Campus suite</small>
+                    <strong>Admin Board</strong>
+                </div>
             </div>
-            <div class="topbar-actions">
-                <button class="btn btn-ghost">Exportar</button>
-                <button class="btn btn-primary">Nuevo usuario</button>
+
+            <div class="side-panel">
+                <div class="side-label">Area critica</div>
+                <div class="side-title">Gobierno y control</div>
+                <p class="side-text">Visibilidad sobre cuentas, permisos, aprobaciones y puntos de riesgo institucional.</p>
             </div>
-        </header>
 
-        <section class="stats">
-            <article class="card">
-                <p class="card-label">Usuarios activos</p>
-                <p class="card-value">328</p>
-                <p class="card-meta">+5 esta semana</p>
-            </article>
-            <article class="card">
-                <p class="card-label">Pendientes</p>
-                <p class="card-value">12</p>
-                <p class="card-meta">Solicitudes de acceso</p>
-            </article>
-            <article class="card">
-                <p class="card-label">Roles críticos</p>
-                <p class="card-value">3</p>
-                <p class="card-meta">Supervisar permisos</p>
-            </article>
-        </section>
+            <nav class="side-nav">
+                <a class="nav-link" href="index.html">
+                    <span class="nav-icon">DB</span>
+                    <span>Dashboard</span>
+                </a>
+                <a class="nav-link active" href="usuarios.html">
+                    <span class="nav-icon">AD</span>
+                    <span>Usuarios</span>
+                </a>
+                <a class="nav-link" href="docente.html">
+                    <span class="nav-icon">DO</span>
+                    <span>Docentes</span>
+                </a>
+                <a class="nav-link" href="estudiante.html">
+                    <span class="nav-icon">ES</span>
+                    <span>Estudiantes</span>
+                </a>
+            </nav>
 
-        <section class="grid">
-            <article class="panel">
-                <div class="panel-header">
-                    <h2>Últimas actividades</h2>
-                    <a class="link" href="#">Ver auditoría</a>
-                </div>
-                <ul class="list">
-                    <li>
-                        <div>
-                            <p class="list-title">Nuevo docente creado</p>
-                            <p class="list-subtitle">María López · Hace 2 h</p>
-                        </div>
-                        <span class="badge">Nuevo</span>
-                    </li>
-                    <li>
-                        <div>
-                            <p class="list-title">Rol actualizado</p>
-                            <p class="list-subtitle">Carlos Pérez · Hace 1 día</p>
-                        </div>
-                        <span class="badge neutral">Revisión</span>
-                    </li>
-                    <li>
-                        <div>
-                            <p class="list-title">Cuenta bloqueada</p>
-                            <p class="list-subtitle">Usuario invitado · Hace 2 días</p>
-                        </div>
-                        <span class="badge warning">Atención</span>
-                    </li>
-                </ul>
-            </article>
+            <div class="sidebar-footer">
+                <a class="logout-link" href="index.html">Volver al inicio</a>
+            </div>
+        </aside>
 
-            <article class="panel">
-                <div class="panel-header">
-                    <h2>Filtros rápidos</h2>
+        <main class="workspace">
+            <div class="workspace-inner">
+                <div class="toolbar">
+                    <label class="toolbar-search">
+                        <span>Buscar</span>
+                        <input type="text" placeholder="Busca usuarios, roles o tickets" />
+                    </label>
+
+                    <div class="toolbar-meta">
+                        <div class="toolbar-pill">Panel directivo</div>
+                        <a class="toolbar-icon" href="#">AL</a>
+                        <div class="toolbar-profile">
+                            <div class="avatar dark">AD</div>
+                            <div class="profile-copy">
+                                <strong>Gestion institucional</strong>
+                                <span>Vista para directivos y super admin</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="chip-grid">
-                    <span class="chip">Directivos</span>
-                    <span class="chip">Docentes</span>
-                    <span class="chip">Estudiantes</span>
-                    <span class="chip">Pendientes</span>
-                    <span class="chip">Suspendidos</span>
+
+                <div class="content-grid">
+                    <section class="content-main">
+                        <article class="hero-card">
+                            <div class="hero-copy">
+                                <div class="eyebrow">Dashboard administrativo</div>
+                                <h2>Decision, control y trazabilidad en una sola vista.</h2>
+                                <p class="subtitle">Este panel replica el lenguaje visual del mock y lo aterriza a supervision de usuarios, cargas de aprobacion y alertas operativas.</p>
+                                <div class="hero-actions">
+                                    <button class="btn btn-primary" type="button">Crear usuario</button>
+                                    <button class="btn btn-ghost" type="button">Exportar reporte</button>
+                                </div>
+                            </div>
+
+                            <div class="hero-art" aria-hidden="true">
+                                <div class="figure-screen"></div>
+                                <div class="figure-person">
+                                    <div class="head"></div>
+                                    <div class="body"></div>
+                                    <div class="arms"></div>
+                                    <div class="legs"></div>
+                                </div>
+                                <div class="figure-desk"></div>
+                                <div class="figure-seat"></div>
+                            </div>
+                        </article>
+
+                        <section class="summary-row">
+                            <article class="stat-card">
+                                <p class="card-label">Usuarios activos</p>
+                                <p class="card-value">328</p>
+                                <p class="card-meta">12 altas esta semana</p>
+                            </article>
+                            <article class="stat-card">
+                                <p class="card-label">Solicitudes</p>
+                                <p class="card-value">14</p>
+                                <p class="card-meta">6 esperan aprobacion</p>
+                            </article>
+                            <article class="stat-card">
+                                <p class="card-label">Riesgo</p>
+                                <p class="card-value">03</p>
+                                <p class="card-meta">Permisos criticos por revisar</p>
+                            </article>
+                        </section>
+
+                        <article class="panel table-card">
+                            <div class="panel-header">
+                                <div>
+                                    <h2>Estado de cuentas</h2>
+                                    <p>Resumen de usuarios recientes y su situacion operativa.</p>
+                                </div>
+                                <a class="link" href="#">Ver directorio completo</a>
+                            </div>
+
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Usuario</th>
+                                        <th>Rol</th>
+                                        <th>Ultimo acceso</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Ana Mejia</td>
+                                        <td>Directivo</td>
+                                        <td>Hace 12 min</td>
+                                        <td><span class="status-chip">Activo</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Samuel Ortega</td>
+                                        <td>Docente</td>
+                                        <td>Hace 47 min</td>
+                                        <td><span class="status-chip">Activo</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Juliana Torres</td>
+                                        <td>Estudiante</td>
+                                        <td>Hace 2 h</td>
+                                        <td><span class="status-chip warning">Pendiente</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>David Rios</td>
+                                        <td>Super admin</td>
+                                        <td>Ayer</td>
+                                        <td><span class="status-chip danger">Revisar</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </article>
+
+                        <div class="split-grid">
+                            <article class="panel">
+                                <div class="panel-header">
+                                    <div>
+                                        <h2>Actividad reciente</h2>
+                                        <p>Eventos con mayor impacto en permisos y acceso.</p>
+                                    </div>
+                                    <span class="pill">Tiempo real</span>
+                                </div>
+
+                                <ul class="event-list">
+                                    <li class="event-item">
+                                        <div class="icon-badge">LG</div>
+                                        <div>
+                                            <strong>Nuevo docente aprobado</strong>
+                                            <span>Se activo la cuenta de Laura Gomez en Ciencias.</span>
+                                        </div>
+                                        <span class="tag">Hace 24 min</span>
+                                    </li>
+                                    <li class="event-item">
+                                        <div class="icon-badge">RL</div>
+                                        <div>
+                                            <strong>Permiso elevado auditado</strong>
+                                            <span>Se reviso acceso a reportes institucionales.</span>
+                                        </div>
+                                        <span class="tag">Hace 1 h</span>
+                                    </li>
+                                    <li class="event-item">
+                                        <div class="icon-badge">BL</div>
+                                        <div>
+                                            <strong>Cuenta temporal bloqueada</strong>
+                                            <span>Se detecto actividad atipica en un usuario invitado.</span>
+                                        </div>
+                                        <span class="tag">Hace 3 h</span>
+                                    </li>
+                                </ul>
+                            </article>
+
+                            <article class="panel">
+                                <div class="panel-header">
+                                    <div>
+                                        <h2>Acciones rapidas</h2>
+                                        <p>Atajos mas usados del rol.</p>
+                                    </div>
+                                </div>
+
+                                <div class="action-grid">
+                                    <div class="action-card">
+                                        <strong>Alta masiva</strong>
+                                        <span>Crear lotes de usuarios por dependencia o cohorte.</span>
+                                    </div>
+                                    <div class="action-card">
+                                        <strong>Roles criticos</strong>
+                                        <span>Auditar permisos administrativos sensibles.</span>
+                                    </div>
+                                    <div class="action-card">
+                                        <strong>Exportar auditoria</strong>
+                                        <span>Generar evidencia para comites internos.</span>
+                                    </div>
+                                    <div class="action-card">
+                                        <strong>Bloqueos</strong>
+                                        <span>Gestionar sesiones y cuentas suspendidas.</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <aside class="content-side">
+                        <article class="panel">
+                            <div class="panel-header">
+                                <div>
+                                    <h2>Agenda ejecutiva</h2>
+                                    <p>Bloques del dia.</p>
+                                </div>
+                                <span class="pill">Hoy</span>
+                            </div>
+
+                            <div class="schedule-list">
+                                <div class="schedule-item">
+                                    <div class="schedule-time">09:00</div>
+                                    <div class="schedule-card active">
+                                        <strong>Comite de permisos</strong>
+                                        <span>Revision de accesos altos</span>
+                                        <small>09:00 - 10:00</small>
+                                    </div>
+                                </div>
+                                <div class="schedule-item">
+                                    <div class="schedule-time">11:30</div>
+                                    <div class="schedule-card">
+                                        <strong>Seguimiento de onboarding</strong>
+                                        <span>Nuevos docentes y directivos</span>
+                                        <small>11:30 - 12:00</small>
+                                    </div>
+                                </div>
+                                <div class="schedule-item">
+                                    <div class="schedule-time">15:00</div>
+                                    <div class="schedule-card">
+                                        <strong>Reporte mensual</strong>
+                                        <span>Consolidado institucional</span>
+                                        <small>15:00 - 16:00</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="panel">
+                            <div class="panel-header">
+                                <div>
+                                    <h2>Indicadores de control</h2>
+                                    <p>Lectura rapida por frente.</p>
+                                </div>
+                            </div>
+
+                            <div class="progress-grid">
+                                <div class="progress-card">
+                                    <div class="ring" style="--value: 91;" data-label="91%"></div>
+                                    <div class="progress-copy">
+                                        <strong>Cuentas al dia</strong>
+                                        <span>Sin incidencias de acceso</span>
+                                    </div>
+                                </div>
+                                <div class="progress-card">
+                                    <div class="ring" style="--value: 83;" data-label="83%"></div>
+                                    <div class="progress-copy">
+                                        <strong>Aprobaciones cerradas</strong>
+                                        <span>Tickets procesados hoy</span>
+                                    </div>
+                                </div>
+                                <div class="progress-card">
+                                    <div class="ring" style="--value: 76;" data-label="76%"></div>
+                                    <div class="progress-copy">
+                                        <strong>Auditoria completa</strong>
+                                        <span>Revision del mes en curso</span>
+                                    </div>
+                                </div>
+                                <div class="progress-card">
+                                    <div class="ring" style="--value: 95;" data-label="95%"></div>
+                                    <div class="progress-copy">
+                                        <strong>Disponibilidad</strong>
+                                        <span>Servicios operativos</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="panel">
+                            <div class="panel-header">
+                                <div>
+                                    <h2>Eventos proximos</h2>
+                                    <p>Compromisos relevantes.</p>
+                                </div>
+                            </div>
+
+                            <ul class="task-list">
+                                <li class="task-item">
+                                    <div class="avatar alt">AR</div>
+                                    <div>
+                                        <strong>Revision de accesos externos</strong>
+                                        <span>Hoy a las 16:30 con soporte.</span>
+                                    </div>
+                                    <span class="tag">Hoy</span>
+                                </li>
+                                <li class="task-item">
+                                    <div class="avatar">RP</div>
+                                    <div>
+                                        <strong>Entrega de reporte rectoria</strong>
+                                        <span>Resumen mensual de roles y trazas.</span>
+                                    </div>
+                                    <span class="tag">Manana</span>
+                                </li>
+                            </ul>
+                        </article>
+                    </aside>
                 </div>
-            </article>
-        </section>
+            </div>
+        </main>
     </div>
 
     <script src="js/guard.js"></script>
     <script>
         requireRole(["SUPER_ADMIN", "DIRECTIVO"]);
     </script>
-
 </body>
 
 </html>

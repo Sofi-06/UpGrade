@@ -4,99 +4,361 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Panel Docente</title>
+    <title>Dashboard docente</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap"
         rel="stylesheet"
     />
     <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
-
-    <div class="page">
-        <header class="topbar">
-            <div>
-                <p class="eyebrow">Panel</p>
-                <h1>Docente</h1>
-                <p class="subtitle">Clases, notas, estudiantes</p>
+    <div class="app-shell">
+        <aside class="sidebar">
+            <div class="brand">
+                <div class="brand-mark">SC</div>
+                <div class="brand-copy">
+                    <small>Campus suite</small>
+                    <strong>Teacher Flow</strong>
+                </div>
             </div>
-            <div class="topbar-actions">
-                <button class="btn btn-ghost">Exportar</button>
-                <button class="btn btn-primary">Nueva clase</button>
+
+            <div class="side-panel">
+                <div class="side-label">Panel de aula</div>
+                <div class="side-title">Clase, ritmo y seguimiento</div>
+                <p class="side-text">Una vista docente pensada para moverse entre agenda, rendimiento por curso y tareas del dia.</p>
             </div>
-        </header>
 
-        <section class="stats">
-            <article class="card">
-                <p class="card-label">Clases activas</p>
-                <p class="card-value">6</p>
-                <p class="card-meta">2 pendientes de evaluación</p>
-            </article>
-            <article class="card">
-                <p class="card-label">Estudiantes</p>
-                <p class="card-value">184</p>
-                <p class="card-meta">+12 esta semana</p>
-            </article>
-            <article class="card">
-                <p class="card-label">Promedio general</p>
-                <p class="card-value">4.3</p>
-                <p class="card-meta">Sobre 5.0</p>
-            </article>
-        </section>
+            <nav class="side-nav">
+                <a class="nav-link" href="index.html">
+                    <span class="nav-icon">DB</span>
+                    <span>Dashboard</span>
+                </a>
+                <a class="nav-link" href="usuarios.html">
+                    <span class="nav-icon">AD</span>
+                    <span>Admin</span>
+                </a>
+                <a class="nav-link active" href="docente.html">
+                    <span class="nav-icon">DO</span>
+                    <span>Clases</span>
+                </a>
+                <a class="nav-link" href="estudiante.html">
+                    <span class="nav-icon">ES</span>
+                    <span>Estudiantes</span>
+                </a>
+            </nav>
 
-        <section class="grid">
-            <article class="panel">
-                <div class="panel-header">
-                    <h2>Próximas clases</h2>
-                    <a class="link" href="#">Ver todo</a>
-                </div>
-                <ul class="list">
-                    <li>
-                        <div>
-                            <p class="list-title">Matemáticas I</p>
-                            <p class="list-subtitle">Lun, 08:00 - Aula 204</p>
-                        </div>
-                        <span class="badge">Hoy</span>
-                    </li>
-                    <li>
-                        <div>
-                            <p class="list-title">Física II</p>
-                            <p class="list-subtitle">Mar, 10:00 - Laboratorio B</p>
-                        </div>
-                        <span class="badge">Mañana</span>
-                    </li>
-                    <li>
-                        <div>
-                            <p class="list-title">Cálculo</p>
-                            <p class="list-subtitle">Mié, 11:30 - Aula 101</p>
-                        </div>
-                        <span class="badge neutral">En 2 días</span>
-                    </li>
-                </ul>
-            </article>
+            <div class="sidebar-footer">
+                <a class="logout-link" href="index.html">Volver al inicio</a>
+            </div>
+        </aside>
 
-            <article class="panel">
-                <div class="panel-header">
-                    <h2>Acciones rápidas</h2>
+        <main class="workspace">
+            <div class="workspace-inner">
+                <div class="toolbar">
+                    <label class="toolbar-search">
+                        <span>Buscar</span>
+                        <input type="text" placeholder="Busca curso, grupo o evaluacion" />
+                    </label>
+
+                    <div class="toolbar-meta">
+                        <div class="toolbar-pill">Docente activo</div>
+                        <a class="toolbar-icon" href="#">EV</a>
+                        <div class="toolbar-profile">
+                            <div class="avatar">DO</div>
+                            <div class="profile-copy">
+                                <strong>Panel docente</strong>
+                                <span>Clases, notas y seguimiento</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="quick-actions">
-                    <button class="btn btn-soft">Cargar notas</button>
-                    <button class="btn btn-soft">Enviar aviso</button>
-                    <button class="btn btn-soft">Registrar asistencia</button>
-                    <button class="btn btn-soft">Crear evaluación</button>
+
+                <div class="content-grid">
+                    <section class="content-main">
+                        <article class="hero-card">
+                            <div class="hero-copy">
+                                <div class="eyebrow">Experiencia docente</div>
+                                <h2>Hola profe, hoy tienes tres frentes academicos por priorizar.</h2>
+                                <p class="subtitle">El tablero concentra agenda, desempeno por curso, acciones rapidas y acompanamiento de tus grupos con la misma composicion visual del diseno base.</p>
+                                <div class="hero-actions">
+                                    <button class="btn btn-primary" type="button">Nueva clase</button>
+                                    <button class="btn btn-soft" type="button">Publicar aviso</button>
+                                </div>
+                            </div>
+
+                            <div class="hero-art" aria-hidden="true">
+                                <div class="figure-screen"></div>
+                                <div class="figure-person">
+                                    <div class="head"></div>
+                                    <div class="body"></div>
+                                    <div class="arms"></div>
+                                    <div class="legs"></div>
+                                </div>
+                                <div class="figure-desk"></div>
+                                <div class="figure-seat"></div>
+                            </div>
+                        </article>
+
+                        <section class="summary-row">
+                            <article class="stat-card">
+                                <p class="card-label">Clases activas</p>
+                                <p class="card-value">06</p>
+                                <p class="card-meta">2 listas para evaluacion</p>
+                            </article>
+                            <article class="stat-card">
+                                <p class="card-label">Estudiantes</p>
+                                <p class="card-value">184</p>
+                                <p class="card-meta">12 con seguimiento cercano</p>
+                            </article>
+                            <article class="stat-card">
+                                <p class="card-label">Promedio general</p>
+                                <p class="card-value">4.3</p>
+                                <p class="card-meta">Sobre la meta institucional</p>
+                            </article>
+                        </section>
+
+                        <div class="dashboard-grid">
+                            <article class="panel">
+                                <div class="panel-header">
+                                    <div>
+                                        <h2>Rendimiento por curso</h2>
+                                        <p>Lectura del mejor desempeno del mes.</p>
+                                    </div>
+                                    <span class="pill">Dic 2026</span>
+                                </div>
+
+                                <div class="scoreline">
+                                    <div>
+                                        <strong>95.4</strong>
+                                        <span>Indice global de tus mejores clases</span>
+                                    </div>
+                                    <span class="tag">Todos los salones</span>
+                                </div>
+
+                                <div class="bars">
+                                    <div class="bar">
+                                        <div class="bar-meter" style="--height: 74%;"></div>
+                                        <span>Algoritmos</span>
+                                    </div>
+                                    <div class="bar">
+                                        <div class="bar-meter" style="--height: 88%;"></div>
+                                        <span>Estructuras</span>
+                                    </div>
+                                    <div class="bar">
+                                        <div class="bar-meter" style="--height: 82%;"></div>
+                                        <span>Bases de datos</span>
+                                    </div>
+                                    <div class="bar">
+                                        <div class="bar-meter" style="--height: 78%;"></div>
+                                        <span>Web</span>
+                                    </div>
+                                    <div class="bar">
+                                        <div class="bar-meter" style="--height: 56%;"></div>
+                                        <span>Movil</span>
+                                    </div>
+                                    <div class="bar">
+                                        <div class="bar-meter" style="--height: 69%;"></div>
+                                        <span>IA</span>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="panel">
+                                <div class="panel-header">
+                                    <div>
+                                        <h2>Progreso por frente</h2>
+                                        <p>Distribucion de resultados.</p>
+                                    </div>
+                                </div>
+
+                                <div class="progress-grid">
+                                    <div class="progress-card">
+                                        <div class="ring" style="--value: 92;" data-label="92%"></div>
+                                        <div class="progress-copy">
+                                            <strong>Algoritmos</strong>
+                                            <span>Participacion alta</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress-card">
+                                        <div class="ring" style="--value: 83;" data-label="83%"></div>
+                                        <div class="progress-copy">
+                                            <strong>POO</strong>
+                                            <span>Buen dominio de tema</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress-card">
+                                        <div class="ring" style="--value: 78;" data-label="78%"></div>
+                                        <div class="progress-copy">
+                                            <strong>BD</strong>
+                                            <span>Necesita refuerzo</span>
+                                        </div>
+                                    </div>
+                                    <div class="progress-card">
+                                        <div class="ring" style="--value: 97;" data-label="97%"></div>
+                                        <div class="progress-copy">
+                                            <strong>Web</strong>
+                                            <span>Maximo avance</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="split-grid">
+                            <article class="panel">
+                                <div class="panel-header">
+                                    <div>
+                                        <h2>Docentes y apoyo linked</h2>
+                                        <p>Red de acompanamiento academico.</p>
+                                    </div>
+                                    <a class="link" href="#">Ver red completa</a>
+                                </div>
+
+                                <ul class="teacher-list">
+                                    <li class="teacher-item">
+                                        <div class="avatar dark">MJ</div>
+                                        <div>
+                                            <strong>Mary Johnson</strong>
+                                            <span>Mentora de Ciencias y estrategias de aula</span>
+                                        </div>
+                                        <div class="icon-actions">
+                                            <span>EM</span>
+                                            <span>CL</span>
+                                        </div>
+                                    </li>
+                                    <li class="teacher-item">
+                                        <div class="avatar alt">JB</div>
+                                        <div>
+                                            <strong>James Brown</strong>
+                                            <span>Idiomas y mediacion de grupos</span>
+                                        </div>
+                                        <div class="icon-actions">
+                                            <span>EM</span>
+                                            <span>CL</span>
+                                        </div>
+                                    </li>
+                                    <li class="teacher-item">
+                                        <div class="avatar">LP</div>
+                                        <div>
+                                            <strong>Laura Pineda</strong>
+                                            <span>Coordinacion academica y evaluacion</span>
+                                        </div>
+                                        <div class="icon-actions">
+                                            <span>EM</span>
+                                            <span>CL</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </article>
+
+                            <article class="panel">
+                                <div class="panel-header">
+                                    <div>
+                                        <h2>Acciones rapidas</h2>
+                                        <p>Las tareas que mas repites.</p>
+                                    </div>
+                                </div>
+
+                                <div class="action-grid">
+                                    <div class="action-card">
+                                        <strong>Cargar notas</strong>
+                                        <span>Actualiza evaluaciones del bloque actual.</span>
+                                    </div>
+                                    <div class="action-card">
+                                        <strong>Tomar asistencia</strong>
+                                        <span>Marca asistencia de grupos activos.</span>
+                                    </div>
+                                    <div class="action-card">
+                                        <strong>Crear evaluacion</strong>
+                                        <span>Programa rubricas y fechas de entrega.</span>
+                                    </div>
+                                    <div class="action-card">
+                                        <strong>Enviar aviso</strong>
+                                        <span>Publica novedades a estudiantes y acudientes.</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </section>
+
+                    <aside class="content-side">
+                        <article class="panel">
+                            <div class="panel-header">
+                                <div>
+                                    <h2>Calendario del dia</h2>
+                                    <p>6 eventos programados</p>
+                                </div>
+                                <span class="pill">Today</span>
+                            </div>
+
+                            <div class="schedule-list">
+                                <div class="schedule-item">
+                                    <div class="schedule-time">10:00</div>
+                                    <div class="schedule-card active">
+                                        <strong>Electronica lesson</strong>
+                                        <span>Salon 301 - 29 estudiantes</span>
+                                        <small>09:45 - 10:30</small>
+                                    </div>
+                                </div>
+                                <div class="schedule-item">
+                                    <div class="schedule-time">11:00</div>
+                                    <div class="schedule-card">
+                                        <strong>Robotica lesson</strong>
+                                        <span>Lab B - 18 estudiantes</span>
+                                        <small>11:00 - 11:45</small>
+                                    </div>
+                                </div>
+                                <div class="schedule-item">
+                                    <div class="schedule-time">13:45</div>
+                                    <div class="schedule-card">
+                                        <strong>C plus plus lesson</strong>
+                                        <span>Sala 4 - Grupo avanzado</span>
+                                        <small>13:45 - 14:20</small>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <article class="panel">
+                            <div class="panel-header">
+                                <div>
+                                    <h2>Proximos eventos</h2>
+                                    <p>Agenda extendida del docente.</p>
+                                </div>
+                            </div>
+
+                            <ul class="task-list">
+                                <li class="task-item">
+                                    <div class="avatar alt">TF</div>
+                                    <div>
+                                        <strong>Festival Robot Fest</strong>
+                                        <span>14 Dic 2026 - Exhibicion y premiacion.</span>
+                                    </div>
+                                    <span class="tag">12:00</span>
+                                </li>
+                                <li class="task-item">
+                                    <div class="avatar dark">WB</div>
+                                    <div>
+                                        <strong>Webinar de herramientas</strong>
+                                        <span>21 Dic 2026 - Recursos para la clase digital.</span>
+                                    </div>
+                                    <span class="tag">11:00</span>
+                                </li>
+                            </ul>
+                        </article>
+                    </aside>
                 </div>
-            </article>
-        </section>
+            </div>
+        </main>
     </div>
 
     <script src="js/guard.js"></script>
     <script>
         requireRole(["DOCENTE"]);
     </script>
-
 </body>
 
 </html>

@@ -6,28 +6,25 @@ fetch("http://localhost:3002/users/me", {
     return res.json();
   })
   .then(user => {
-
     document.getElementById("welcome").innerText =
       `Bienvenida ${user.nombre} (${user.rol})`;
+    document.getElementById("role-count").innerText = user.rol;
 
-    // OCULTAR TODO
     document.getElementById("adminView").style.display = "none";
     document.getElementById("docenteView").style.display = "none";
     document.getElementById("estudianteView").style.display = "none";
 
-    // MOSTRAR SEGÚN ROL
     if (user.rol === "SUPER_ADMIN" || user.rol === "DIRECTIVO") {
-      document.getElementById("adminView").style.display = "block";
+      document.getElementById("adminView").style.display = "flex";
     }
 
     if (user.rol === "DOCENTE") {
-      document.getElementById("docenteView").style.display = "block";
+      document.getElementById("docenteView").style.display = "flex";
     }
 
     if (user.rol === "ESTUDIANTE") {
-      document.getElementById("estudianteView").style.display = "block";
+      document.getElementById("estudianteView").style.display = "flex";
     }
-
   })
   .catch(err => {
     console.error(err);
